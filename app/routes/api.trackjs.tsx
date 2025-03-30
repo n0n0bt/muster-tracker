@@ -27,7 +27,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
           const storedGclid = localStorage.getItem("gclid");
           console.log("📤 Sending muster_cart with gclid:", storedGclid);
 
-          fetch("/api/track", {
+          fetch("https://muster-tracker.onrender.com/api/track", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ event: "muster_cart", gclid: storedGclid }),
